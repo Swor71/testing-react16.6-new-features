@@ -13,4 +13,4 @@ const login = props => {
     )
 };
 
-export default login;
+export default React.memo(login); // with the use of .memo() react remembers the props performing shallow check !watch out for object
