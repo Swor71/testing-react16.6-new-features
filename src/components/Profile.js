@@ -1,15 +1,7 @@
-import React from 'react'
-
-import AuthContext from '../auth-context';
+import React from 'react';
 
 const profile = props => (
-  <AuthContext.Consumer>
-    {authContext => {
-      return (
-        <h1>{authContext.isAuth ? 'You\'re logged in' : 'Not logged in'}</h1>
-      );
-    }}
-  </AuthContext.Consumer>
-)
+  <h1>{props.authenticated ? 'You are logged in!' : 'Not logged in!'}</h1>
+);
 
 export default profile;

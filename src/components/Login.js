@@ -1,21 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import AuthContext from '../auth-context';
+const login = props => {
+  console.log(props);
 
-class Login extends Component {
-  static contextType = AuthContext; // tells react which context to connect to
+  // even though the prop has not changed when repetedly pressing one button, react will rerender that component
 
-  componentDidMount() {
-    console.log(this.context);
-  }
-
-  render() {
-    return (
-      <button onClick={this.context.toggleAuth}>
-        {this.context.isAuth ? 'Logout' : 'Login'}
-      </button>
+  return (
+    <>
+    <button onClick={props.onLogin}>Login</button>
+    <button onClick={props.onLogout}>Logout</button>
+    </>
     )
-  }
-}
+};
 
-export default Login;
+export default login;
